@@ -22,6 +22,7 @@ class Question:
 def load_questions_from_csv(filename,questions):
     csv_file = open(filename,'r')
     reader = csv.reader(csv_file,delimiter=',')
+    next(reader,None)
     for row in reader:
         questions.append(Question(row[0],row[1],row[2]))
     csv_file.close()
